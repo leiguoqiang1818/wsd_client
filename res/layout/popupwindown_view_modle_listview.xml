@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_base_editetext_gray_light"
+    android:clickable="false"
+    android:padding="5sp">
+    <ListView 
+        android:id="@+id/lv_dingdan_my_modle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="@null"
+        android:divider="@color/wathet_blue"
+        android:dividerHeight="0.5sp"
+        android:background="@color/white"
+        android:focusable="true"
+        ></ListView>
+</LinearLayout>

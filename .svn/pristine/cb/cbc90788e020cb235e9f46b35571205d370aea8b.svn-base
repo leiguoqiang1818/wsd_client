@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 第一层容器 -->
+
+    <com.example.wsd_client.customViews.CustomEnableLinearLayout
+        android:id="@+id/ll_fragment_cart_pager_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!-- 头部信息 -->
+
+        <FrameLayout
+            android:id="@+id/fl_fragmnet_cart_pager_head_info"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:background="@color/wathet_blue" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="购物车"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <!-- 编辑文本按钮 -->
+
+            <TextView
+                android:id="@+id/tv_fragment_cart_pager_edite_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="16sp"
+                android:text="编辑全部"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+            <!-- 头部信息结束 -->
+        </FrameLayout>
+
+        <!-- 中部购物车数据呈现 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="8" >
+
+            <!-- 无数据状态 -->
+
+            <com.example.wsd_client.customViews.CustomEnableLinearLayout
+                android:id="@+id/ll_fragment_cart_pager_unlinked"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <!-- 断网图案 -->
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight="3"
+                        android:src="@drawable/unlinked" />
+
+                    <TextView
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight="1"
+                        android:text="亲，购物车空空如也，请前往商品列表进行选购"
+                        android:textColor="@color/gray" />
+
+                    <!-- 重新加载按钮 -->
+
+                    <TextView
+                        android:id="@+id/tv_fragment_cart_pager_linked_argin"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:text="立即选购"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1" />
+            </com.example.wsd_client.customViews.CustomEnableLinearLayout>
+
+            <!-- 购物车商品显示列表 -->
+
+            <ListView
+                android:id="@+id/lv_fragment_cart_pager_cartitems"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:divider="@color/wathet_blue"
+                android:dividerHeight="1sp"
+                android:fastScrollEnabled="true"
+                android:scrollbars="@null"
+                android:visibility="invisible" >
+            </ListView>
+        </RelativeLayout>
+
+        <!-- 分割线 -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginTop="2sp"
+            android:background="@color/gray_light" />
+
+        <!-- 底部的总价信息显示 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <!-- 全选文本按钮 -->
+
+            <TextView
+                android:id="@+id/tv_fragment_cart_pager_seclete_all"
+                android:layout_width="0sp"
+                android:layout_height="20sp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/icon_unseclete"
+                android:paddingLeft="5sp"
+                android:text=" 全选"
+                android:textColor="@color/black_light"
+                android:textSize="16sp" />
+
+            <!-- 合计文本按钮 -->
+
+            <TextView
+                android:id="@+id/tv_fragment_cart_pager_total"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:paddingRight="5sp"
+                android:text="合计:￥0.00"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_fragment_cart_pager_total_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/gray_light"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="结算(0)"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <!-- 第一层容器结束 -->
+    </com.example.wsd_client.customViews.CustomEnableLinearLayout>
+
+    <!-- 第二层容器 -->
+
+        <com.example.wsd_client.customViews.CustomEnableLinearLayout
+            android:id="@+id/ll_fragment_cart_pager_seconde"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <!-- 头部透明部分 -->
+
+            <LinearLayout
+                android:id="@+id/ll_fragment_cart_pager_seconde_head"
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="3"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <!-- 正文部分 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="9"
+                android:orientation="vertical" >
+
+                <!-- 头部小图片展示，产品名称，单价，总价 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1" >
+
+                    <!-- 商品基本信息 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <!-- 头部透明 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0sp"
+                            android:layout_weight="1"
+                            android:background="#00000000" >
+                        </LinearLayout>
+                        <!-- 基本信息 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0sp"
+                            android:layout_weight="9"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:background="@color/white"
+                                android:orientation="horizontal" >
+                            </LinearLayout>
+                            <!-- 填写信息的区域，价格，名称 -->
+
+                            <LinearLayout
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="6"
+                                android:background="@color/white"
+                                android:orientation="vertical" >
+
+                                <!-- 单价，退出按钮 -->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0sp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal" >
+
+                                    <TextView
+                                        android:id="@+id/tv_fragment_cart_pager_to_buy_price"
+                                        android:layout_width="0sp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="8"
+                                        android:gravity="left|center_vertical"
+                                        android:padding="5sp"
+                                        android:text="单价:￥500"
+                                        android:textColor="@color/red"
+                                        android:textSize="12sp" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_fragment_cart_pager_to_buy_delete"
+                                        android:layout_width="0sp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="2"
+                                        android:clickable="true"
+                                        android:paddingBottom="3sp"
+                                        android:paddingRight="5sp"
+                                        android:paddingTop="3sp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/detail_btn_selector" />
+                                </LinearLayout>
+                                <!-- 总价 -->
+
+                                <TextView
+                                    android:id="@+id/tv_fragment_cart_pager_to_buy_total_price"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0sp"
+                                    android:layout_weight="1"
+                                    android:gravity="left|center_vertical"
+                                    android:padding="5sp"
+                                    android:text="总价:￥500"
+                                    android:textColor="@color/red"
+                                    android:textSize="12sp" />
+                                <!-- 商品名称 -->
+
+                                <TextView
+                                    android:id="@+id/tv_fragment_cart_pager_to_buy_product_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0sp"
+                                    android:layout_weight="1"
+                                    android:gravity="left|center_vertical"
+                                    android:padding="5sp"
+                                    android:text="商品名称 ......"
+                                    android:textColor="@color/black_light"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- 第二层小图片显示 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/iv_fragment_cart_pager_to_buy_pictrue_show"
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="4"
+                            android:background="@drawable/bg_base_imageview"
+                            android:padding="3sp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/home_vp1" />
+
+                        <LinearLayout
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="6"
+                            android:background="#00000000"
+                            android:clickable="false"
+                            android:focusable="false" >
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- 头部商品展示结束 -->
+                </RelativeLayout>
+
+                <!-- 垂直滚动 ,购买其他参数 -->
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="3"
+                    android:background="@color/white"
+                    android:padding="5sp"
+                    android:scrollbars="@null" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <!-- 购买数量 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="left|center_vertical"
+                                android:text="购买数量" />
+                            <!-- 增加和减少操作 -->
+
+                            <LinearLayout
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="20sp"
+                                android:layout_marginRight="20sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_base_border"
+                                android:orientation="horizontal" >
+
+                                <!-- 递减按钮 -->
+
+                                <ImageView
+                                    android:id="@+id/iv_fragment_cart_pager_to_buy_product_reduce"
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:padding="7sp"
+                                    android:src="@drawable/icon_reduce" />
+
+                                <!-- 分割线 -->
+
+                                <View
+                                    android:layout_width="1sp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/gray_light" />
+
+                                <!-- 数量显示文本框 -->
+
+                                <TextView
+                                    android:id="@+id/tv_fragment_cart_pager_to_buy_count_display"
+                                    style="@style/text_base_font_size_12sp"
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="3"
+                                    android:text="1" />
+
+                                <!-- 分割线 -->
+
+                                <View
+                                    android:layout_width="1sp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/gray_light" />
+
+                                <!-- 递增按钮 -->
+
+                                <ImageView
+                                    android:id="@+id/iv_fragment_cart_pager_to_buy_product_add"
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:padding="7sp"
+                                    android:src="@drawable/icon_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 订单模式 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="订单模式" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_fragment_cart_pager_dingdan_my_modle"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:orientation="horizontal" >
+
+                                <TextView
+                                    android:id="@+id/tv_fragment_cart_pager_selecte_dingdan"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="6"
+                                    android:background="@null"
+                                    android:gravity="left|center_vertical"
+                                    android:hint="请选择订单模式"
+                                    android:paddingLeft="5sp" />
+
+                                <ImageView
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/down_argin" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 订单类型 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="订单类型" />
+
+                            <EditText
+                                android:id="@+id/et_fragment_cart_pager_dingdan_type"
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:gravity="left|center_vertical"
+                                android:hint="请输入订单类型（默认APP）"
+                                android:paddingLeft="5sp" />
+                        </LinearLayout>
+                        <!-- 司机名称 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="司机名称" />
+
+                            <EditText
+                                android:id="@+id/et_fragment_cart_pager_driver_name"
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:gravity="left|center_vertical"
+                                android:hint="请输入司机姓名"
+                                android:paddingLeft="5sp" />
+                        </LinearLayout>
+                        <!-- 司机驾驶证号 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="司机驾驶证号" />
+
+                            <EditText
+                                android:id="@+id/et_fragment_cart_pager_driver_number"
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:gravity="left|center_vertical"
+                                android:hint="请输入司机驾驶证号"
+                                android:paddingLeft="5sp" />
+                        </LinearLayout>
+                        <!-- 货车牌号 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="货车牌号" />
+
+                            <EditText
+                                android:id="@+id/et_fragment_cart_pager_cart_number"
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:gravity="left|center_vertical"
+                                android:hint="请输入货车牌号"
+                                android:paddingLeft="5sp" />
+                        </LinearLayout>
+                        <!-- 司机电话 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="司机电话" />
+
+                            <EditText
+                                android:id="@+id/et_fragment_cart_pager_dirver_phone"
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:gravity="left|center_vertical"
+                                android:hint="请输入电话号码"
+                                android:inputType="number"
+                                android:maxLength="11"
+                                android:paddingLeft="5sp" />
+                        </LinearLayout>
+                        <!-- 下单联系人电话 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="left|center_vertical"
+                                android:text="下单联系电话" />
+
+                            <EditText
+                                android:id="@+id/et_fragment_cart_pager_buy_phone"
+                                style="@style/text_base_font_size_14sp"
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@drawable/bg_base_editetext_gray_light"
+                                android:gravity="left|center_vertical"
+                                android:hint="请输入下单联系人号码"
+                                android:inputType="number"
+                                android:maxLength="11"
+                                android:paddingLeft="5sp" />
+                        </LinearLayout>
+                        <!-- 确定按钮 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginBottom="5sp"
+                            android:layout_marginTop="5sp"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:orientation="horizontal" >
+                            </LinearLayout>
+                            <!-- 确认按钮 -->
+
+                            <Button
+                                android:id="@+id/btn_fragment_cart_pager_seconde_confirm"
+                                android:layout_width="0sp"
+                                android:layout_height="30sp"
+                                android:layout_weight="6"
+                                android:background="@drawable/btn_selector"
+                                android:text="确认"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="0sp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:orientation="horizontal" >
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- 购买参数获取结束 -->
+                    </LinearLayout>
+                </ScrollView>
+                <!-- 正文部分结束 -->
+            </LinearLayout>
+            <!-- 第二层容器结束 -->
+        </com.example.wsd_client.customViews.CustomEnableLinearLayout>
+
+</RelativeLayout>

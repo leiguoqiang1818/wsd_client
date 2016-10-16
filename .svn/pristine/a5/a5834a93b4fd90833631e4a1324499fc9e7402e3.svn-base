@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wsd_client"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.example.wsd_client.application.Myapplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_log"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="com.example.wsd_client.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <action android:name="main_activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.ProductDetailsPagerActivityImpl"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.PictureShowActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="action_to_pictrue_show_pager" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.OrderModleActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.ManageActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.ShowOrderActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wsd_client.activity.CollectionActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

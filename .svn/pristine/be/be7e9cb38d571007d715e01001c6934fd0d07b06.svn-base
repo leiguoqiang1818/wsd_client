@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 第一层布局 -->
+    <LinearLayout
+        android:id="@+id/ll_rongqi_product_details_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <com.example.wsd_client.customViews.CustomViewPager
+                        android:id="@+id/vp_product_details_pager_fragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="280sp" >
+                    </com.example.wsd_client.customViews.CustomViewPager>
+
+                    <!-- 下标原点 -->
+
+                    <RadioGroup
+                        android:id="@+id/rg_index_product_details_pager_fragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20sp" >
+
+                        <RadioButton
+                            android:id="@+id/rb_first_index_product_details_pager_fragment"
+                            android:layout_width="6sp"
+                            android:layout_height="6sp"
+                            android:layout_margin="2sp"
+                            android:background="@drawable/bg_radiobutton_index_selector"
+                            android:button="@null"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/rb_seconde_index_product_details_pager_fragment"
+                            android:layout_width="6sp"
+                            android:layout_height="6sp"
+                            android:layout_margin="2sp"
+                            android:background="@drawable/bg_radiobutton_index_selector"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/rb_third_index_product_details_pager_fragment"
+                            android:layout_width="6sp"
+                            android:layout_height="6sp"
+                            android:layout_margin="2sp"
+                            android:background="@drawable/bg_radiobutton_index_selector"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/rb_fourth_index_product_details_pager_fragment"
+                            android:layout_width="6sp"
+                            android:layout_height="6sp"
+                            android:layout_margin="2sp"
+                            android:background="@drawable/bg_radiobutton_index_selector"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/rb_fifth_index_product_details_pager_fragment"
+                            android:layout_width="6sp"
+                            android:layout_height="6sp"
+                            android:layout_margin="2sp"
+                            android:background="@drawable/bg_radiobutton_index_selector"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/rb_sixth_index_product_details_pager_fragment"
+                            android:layout_width="6sp"
+                            android:layout_height="6sp"
+                            android:layout_margin="2sp"
+                            android:background="@drawable/bg_radiobutton_index_selector"
+                            android:button="@null" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_name_product_details_pager_fragment"
+                    style="@style/text_base_font_size_16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="5sp"
+                    android:text="商品名称" />
+
+                <TextView
+                    android:id="@+id/tv_price_product_details_pager_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="5sp"
+                    android:text="￥2000-5000"
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/text_base_font_size_16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_light"
+                    android:gravity="left"
+                    android:padding="5sp"
+                    android:text="产品参数" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    
+   
+
+</RelativeLayout>

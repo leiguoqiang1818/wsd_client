@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity" 
+    android:background="#ffffff"
+    >
+	<ImageView 
+	    android:id="@+id/iv_splash"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:src="@drawable/splash"
+	    android:contentDescription="@null"
+	    />
+	<TextView 
+	    android:id="@+id/tv_splash"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/tv_splash"
+	    android:textSize="26sp"
+	    android:textColor="#00A0E9"
+	    android:layout_gravity="bottom"
+	    android:gravity="center"
+	    android:layout_marginBottom="60dp"
+	    android:visibility="invisible"
+	    />
+</FrameLayout>

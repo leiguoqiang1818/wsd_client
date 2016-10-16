@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_zhangdan_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_zhangdan_clientName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/tv_zhangdan_clientName_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="用  户  名："
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_zhangdan_clientName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="3"
+                android:background="@color/white"
+                android:gravity="center|left"
+                android:paddingLeft="2dp"
+                android:singleLine="true"
+                android:text="张三"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_zhangdan_amount"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/tv_zhangdan_amount_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="账户余额："
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_zhangdan_amount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="3"
+                android:background="@color/white"
+                android:gravity="center|left"
+                android:paddingLeft="2dp"
+                android:singleLine="true"
+                android:text="¥99999.00元"
+                android:textColor="@color/red"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_zhangdan_recharge"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/tv_zhangdan_recharge_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="账户充值："
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_zhangdan_recharge"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="3"
+                android:background="@color/white"
+                android:gravity="center|left"
+                android:paddingLeft="2dp"
+                android:singleLine="true"
+                android:text="此功能正在开发中，尽请期待！"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <TextView 
+            android:id="@+id/tv_zhangdan_null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 浅蓝色，主色调 -->
+    <color name="wathet_blue" >#00A0E9</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+    <!-- 浅灰色 -->
+    <color name="gray_light">#eeeeee</color>
+    <!-- 灰色 -->
+    <color name="gray">#d3d3d3</color>
+    <!-- 浅黑色 -->
+    <color name="black_light">#666666</color>
+    
+    <!-- 红色 -->
+    <color name="red">#ff0000</color>
+    
+    
+    
+</resources>

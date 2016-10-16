@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tv_dingdan_item_count"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="1"
+        android:background="@color/white"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_dingdan_item_info"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_dingdan_item_ladeid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_dingdan_item_ladeid_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="订单编号："
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_dingdan_item_ladeid"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center|left"
+                android:paddingLeft="2dp"
+                android:text="012345678901234567890123456789"
+                android:singleLine="true"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dingdan_item_setDate"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_dingdan_item_setDate_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="下单时间："
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_dingdan_item_setDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center|left"
+                android:paddingLeft="2dp"
+                android:text="123456"
+                android:singleLine="true"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dingdan_item_cementname"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_dingdan_item_cementname_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="商品名称："
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_dingdan_item_cementname"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center|left"
+                android:paddingLeft="2dp"
+                android:text="123456"
+                android:singleLine="true"
+                android:textSize="12sp" />
+        </LinearLayout>
+<!--       
+        <Button 
+            android:id="@+id/btn_dingdan_item_detail"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="查看详情"
+            android:textSize="16sp"
+            android:background="@null"
+            />
+         --> 
+    </LinearLayout>
+
+</LinearLayout>

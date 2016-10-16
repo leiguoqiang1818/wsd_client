@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d3d3d3"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <RadioGroup
+        android:id="@+id/rg_xiaoxi_choose"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_xiaoxi_system"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rg_dingdan_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="系统消息"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rb_xiaoxi_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rg_dingdan_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="订单消息"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+         <RadioButton
+            android:id="@+id/rb_xiaoxi_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rg_dingdan_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="余额消息"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+         <RadioButton
+            android:id="@+id/rb_xiaoxi_acount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rg_dingdan_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="对账消息"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/rl_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white" >
+
+        <com.example.wsd_client.util.RefreshListView
+            android:id="@+id/lv_xiaoxi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="2dp"
+            android:visibility="visible" />
+        
+
+        <TextView
+            android:id="@+id/tv_no_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="暂时还没有消息哦！"
+            android:textSize="24sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

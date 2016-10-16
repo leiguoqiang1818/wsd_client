@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#00A0E9" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" >
+
+        <com.example.wsd_client.util.CircleImageView
+            android:id="@+id/iv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/contact_selector" />
+
+        <ImageButton
+            android:id="@+id/ib_title_back"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/back_selector"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="威士德产品经销商"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_title_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="4sp"
+        android:paddingRight="5sp"
+        >
+
+        <ImageButton
+            android:id="@+id/ib_title_cart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/cart_selector"
+            android:contentDescription="@null"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_cart_index"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8sp"
+            android:text="0"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:background="@drawable/bg_circle_float_index_icon" 
+            android:visibility="invisible"/>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

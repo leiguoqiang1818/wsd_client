@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".SplashActivity" >
+    
+    <ImageView
+        android:id="@+id/iv_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:src="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/tv_splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:text="@string/tv_splash"
+        android:textColor="#00A0E9"
+        android:textSize="26sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btn_ignore"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="right"
+        android:background="@drawable/button_selector"
+        android:minHeight="0sp"
+        android:minWidth="0sp"
+        android:text="跳过"
+        android:textColor="@color/button_color_selector"
+        android:textSize="12sp" />
+
+</FrameLayout>

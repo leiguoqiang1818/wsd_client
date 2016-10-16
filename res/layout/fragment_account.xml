@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00A0E9"
+        android:gravity="center"
+        android:text="资金管理"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_account_choose_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_account_startTime"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#d3d3d3"
+            android:orientation="horizontal"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/tv_account_startTime_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="起始"
+                android:textColor="#232323"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_account_startTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="2"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:text="2016-01-01"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_account_endTime"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#d3d3d3"
+            android:orientation="horizontal"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/tv_account_endTime_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="结束"
+                android:textColor="#232323"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_account_endTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="2"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:text="2016-12-31"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_account_choose"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#d3d3d3"
+            android:orientation="horizontal"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/tv_account_choose"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#ffffff"
+                android:drawableRight="@drawable/down"
+                android:gravity="center"
+                android:text="日期+品种"
+                android:textColor="#232323"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_account_choose"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/account_btn_search_selector"
+                android:gravity="center"
+                android:text="查询"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white" >
+
+        <com.example.wsd_client.util.RefreshListView
+            android:id="@+id/lv_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="4dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_no_news_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="查无数据！"
+            android:textSize="24sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

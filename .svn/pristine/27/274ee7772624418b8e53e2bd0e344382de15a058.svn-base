@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#33eeeeee"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <!-- 编辑状态————删除小图标 -->
+
+        <ImageView
+            android:id="@+id/iv_fragment_cart_pager_delete_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5sp"
+            android:clickable="true"
+            android:padding="1sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_delete"
+            android:visibility="visible" />
+        <!-- 正常状态————选择小图标 -->
+
+        <ImageView
+            android:id="@+id/iv_fragment_cart_pager_selecte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/src_upload_cart_pager_selecter"
+            android:visibility="visible" />
+    </FrameLayout>
+
+    <!-- 商品缩略图 -->
+
+    <ImageView
+        android:id="@+id/iv_fragmnet_cart_pager_pic_show"
+        android:layout_width="0sp"
+        android:layout_height="80sp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_weight="5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash" />
+
+    <!-- 商品基本属性 -->
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5sp"
+        android:layout_weight="8"
+        android:orientation="vertical" >
+
+        <!-- 商品名字和价格 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <!-- 商品名字 -->
+
+            <TextView
+                android:id="@+id/tv_modle_for_adapter_product_name"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="商品名字..." />
+
+            <!-- 商品价格 -->
+
+            <TextView
+                android:id="@+id/tv_modle_for_adapter_product_price"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:text="￥0.00"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <!-- 商品属性和数量 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <!-- 商品属性 -->
+
+            <TextView
+                android:id="@+id/tv_modle_for_adapter_product_attribute"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="商品属性..." />
+
+            <!-- 商品数量 -->
+
+            <TextView
+                android:id="@+id/tv_modle_for_adapter_product_count"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:text="X1"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <!-- 增加和删除，编辑按钮 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <!-- 增加和删除 -->
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5sp"
+                android:layout_weight="5"
+                android:background="@drawable/bg_base_border"
+                android:orientation="horizontal" >
+
+                <!-- 递减按钮 -->
+
+                <ImageView
+                    android:id="@+id/iv_modle_for_adapter_product_reduce"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="7sp"
+                    android:src="@drawable/icon_reduce" />
+
+                <!-- 分割线 -->
+
+                <View
+                    android:layout_width="1sp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_light" />
+
+                <!-- 数量显示文本框 -->
+
+                <TextView
+                    android:id="@+id/tv_modle_for_adapter_count_display"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="1" />
+
+                <!-- 分割线 -->
+
+                <View
+                    android:layout_width="1sp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_light" />
+
+                <!-- 递增按钮 -->
+
+                <ImageView
+                    android:id="@+id/iv_modle_for_adapter_product_add"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="7sp"
+                    android:src="@drawable/icon_add" />
+            </LinearLayout>
+
+            <!-- 单个商品编辑按钮 -->
+
+            <TextView
+                android:id="@+id/tv_modle_for_adapter_product_edite"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical|right"
+                android:layout_marginBottom="5sp"
+                android:text="编辑" />
+        </LinearLayout>
+
+        <!-- 第三部分结束 -->
+    </LinearLayout>
+
+</LinearLayout>

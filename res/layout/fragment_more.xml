@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 第一层 -->
+
+    <LinearLayout
+        android:id="@+id/ll_fragment_more_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <!-- 头部用户基本信息显示 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="4" >
+
+            <!-- 显示背景 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_vp1" />
+
+            <!-- 用户头像显示 -->
+
+            <com.example.wsd_client.util.CircleImageView
+                android:id="@+id/iv_fragment_more_userhead"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_launcher" >
+            </com.example.wsd_client.util.CircleImageView>
+            <!-- 用户名显示 -->
+
+            <TextView
+                android:id="@+id/tv_fragment_more_username"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_fragment_more_userhead"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2sp"
+                android:background="@drawable/bg_base_text_white"
+                android:paddingBottom="2sp"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:paddingTop="2sp"
+                android:text="用户名"
+                android:textColor="@color/wathet_blue"
+                android:visibility="visible" />
+            <!-- 立即登陆 -->
+
+            <TextView
+                android:id="@+id/tv_fragment_more_login"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_fragment_more_userhead"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2sp"
+                android:background="@drawable/bg_base_text_white"
+                android:paddingBottom="2sp"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:paddingTop="2sp"
+                android:text="立即登陆"
+                android:textColor="@color/wathet_blue"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="6"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
+                android:layout_weight="8"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_my_order_modle"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="我的订单模式" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_my_collect"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="我的收藏" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_my_browsing_history"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="我的浏览纪录" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_examine_update"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="检查更新" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_suggest_present"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="意见反馈" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_company_introduce"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="公司简介" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="@color/gray_light" />
+                
+                <!-- 退出按钮 -->
+                <TextView
+                    android:id="@+id/tv_more_fragment_pager_out"
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="退出" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- 第一层结束 -->
+    </LinearLayout>
+
+    <!-- 第二层    修改用户信息 -->
+
+    <LinearLayout
+        android:id="@+id/ll_fragment_more_seconde"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/text_base_font_size_16sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/wathet_blue"
+                android:gravity="center"
+                android:paddingBottom="5sp"
+                android:paddingTop="5sp"
+                android:text="用户设置"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/iv_more_fragment_seconde_back"
+                android:layout_width="50sp"
+                android:layout_height="match_parent"
+                android:padding="12sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_selector" />
+        </FrameLayout>
+
+        <!-- 用户代码 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp" >
+
+            <TextView
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:text=" 登录代码:" />
+
+            <TextView
+                android:id="@+id/tv_fragment_more_client_code"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/bg_base_editetext_blue"
+                android:gravity="center_vertical"
+                android:paddingLeft="5sp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+        <!-- 用户名称 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp" >
+
+            <TextView
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:text=" 用户名称:" />
+
+            <EditText
+                android:id="@+id/et_fragment_more_clientname"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/bg_base_editetext_blue"
+                android:gravity="center_vertical"
+                android:hint="请设置用户名称"
+                android:paddingLeft="5sp"
+                android:singleLine="true" />
+            <requestFocus />
+        </LinearLayout>
+
+        <!-- 联系人 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp" >
+
+            <TextView
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:text=" 联  系  人:" />
+
+            <EditText
+                android:id="@+id/et_fragment_more_linkman"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/bg_base_editetext_blue"
+                android:gravity="center_vertical"
+                android:hint="请设置联系人"
+                android:inputType="text"
+                android:paddingLeft="5sp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <!-- 联系电话 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp" >
+
+            <TextView
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:text=" 联系电话:" />
+
+            <EditText
+                android:id="@+id/et_fragment_more_linkphone"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/bg_base_editetext_blue"
+                android:gravity="center_vertical"
+                android:hint="请设置联系电话"
+                android:inputType="number"
+                android:paddingLeft="5sp"
+                android:maxLength="11"
+                android:singleLine="true" />
+        </LinearLayout>
+        <!-- 密码 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp" >
+
+            <TextView
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:text=" 密        码:" />
+
+            <EditText
+                android:id="@+id/et_fragment_more_password"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/bg_base_editetext_blue"
+                android:gravity="center_vertical"
+                android:hint="请设置用户密码"
+                android:inputType="textPassword"
+                android:paddingLeft="5sp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <!-- 销售区域 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp" >
+
+            <TextView
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:text=" 销售区域:" />
+
+            <EditText
+                android:id="@+id/et_fragment_more_areacode"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/bg_base_editetext_blue"
+                android:gravity="center_vertical"
+                android:hint="请设置销售区域"
+                android:inputType="text"
+                android:paddingLeft="5sp"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <!-- 确认按钮 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+            </LinearLayout>
+            <!-- 确认按钮 -->
+
+            <Button
+                android:id="@+id/btn_fragment_more_confirm"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="6"
+                android:background="@drawable/btn_selector"
+                android:text="确认"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

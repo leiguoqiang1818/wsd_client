@@ -1,0 +1,228 @@
+package com.example.wsd_client.activity;
+
+import org.xutils.x;
+import org.xutils.view.annotation.ViewInject;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.example.wsd_client.R;
+import com.example.wsd_client.application.Myapplication;
+import com.example.wsd_client.entity.Cart;
+import com.example.wsd_client.fragment.AccountFragment;
+import com.example.wsd_client.fragment.HomeFragment;
+import com.example.wsd_client.fragment.MoreFragment;
+import com.example.wsd_client.fragment.impl.UploadCartDataViewImpl;
+import com.example.wsd_client.util.CircleImageView;
+
+public class MainActivity extends FragmentActivity implements OnCheckedChangeListener{
+	private RadioGroup rg_main;
+	private RadioButton rbHome, rbAccount,rbCart , rbMore;
+	private Fragment[] fragmentArray = new Fragment[4];
+
+	/**
+	 * fragment对象
+	 */
+	private HomeFragment homeFragment = new HomeFragment(this);
+	private AccountFragment accountFragment = new AccountFragment();
+	private UploadCartDataViewImpl cartFragment = new UploadCartDataViewImpl();
+	private MoreFragment moreFragment = new MoreFragment();
+	private FragmentManager fragmentManager;
+
+	/**
+	 * app头部容器
+	 */
+	@ViewInject(R.id.rl_title_bar)
+	private RelativeLayout rl_title_bar;
+	/**
+	 * 购物车数量图标
+	 */
+	@ViewInject(R.id.tv_main_activity_pager_cart_count)
+	private TextView tv_cart_acount;
+	/**
+	 * 购物车对象
+	 */
+	private Cart cart;
+	/**
+	 * application对象
+	 */
+	private Myapplication app;
+	/**
+	 * 页面标记变量，用于重新呈现页面使用
+	 */
+	private boolean flag_display_argin = false;
+	/**
+	 * radiobutton数组
+	 */
+	private RadioButton[] radioButtonArray = new RadioButton[4];
+
+	/**
+	 * 标记标量，是否有新的intent对象传递进来
+	 */
+	private boolean flag_intent = false;
+	/**
+	 * fragment的tag标记数组
+	 */
+	private String fragmentTagArray[] = new String[4];;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		x.view().inject(this);
+		init(savedInstanceState);
+		initListeners();
+	}
+
+	private void init(Bundle savedInstanceState) {
+		fragmentManager = getSupportFragmentManager();
+		//初始化fragment标签数组
+		fragmentTagArray[0] = "homeFragment";
+		fragmentTagArray[1] = "accountFragment";
+		fragmentTagArray[2] = "cartFragment";
+		fragmentTagArray[3] = "moreFragment";
+		//判断fragment是否已经保存bundle中,有的话对fangmeng进行重新赋值
+		if(savedInstanceState!=null){
+			homeFragment = (HomeFragment) fragmentManager.findFragmentByTag(fragmentTagArray[0]);
+			accountFragment = (AccountFragment) fragmentManager.findFragmentByTag(fragmentTagArray[1]);
+			cartFragment = (UploadCartDataViewImpl) fragmentManager.findFragmentByTag(fragmentTagArray[2]);
+			moreFragment = (MoreFragment) fragmentManager.findFragmentByTag(fragmentTagArray[3]);
+		}
+		app = (Myapplication) Myapplication.getContext();
+		cart = app.getCart();
+		Myapplication.getList().add(this);
+		rg_main=(RadioGroup) findViewById(R.id.rg_main);
+		//初始化radiobutton
+		rbCart=(RadioButton) findViewById(R.id.rb_cart);
+		rbHome=(RadioButton) findViewById(R.id.rb_home);
+		rbAccount = (RadioButton) findViewById(R.id.rb_account);
+		rbMore = (RadioButton) findViewById(R.id.rb_more);
+		//初始化radiobutton数组
+		radioButtonArray[0] = rbHome;
+		radioButtonArray[1] = rbAccount;
+		radioButtonArray[2] = rbCart;
+		radioButtonArray[3] = rbMore;
+		//初始化fragment数组
+		fragmentArray[0] = homeFragment;
+		fragmentArray[1] = accountFragment;
+		fragmentArray[2] = cartFragment;
+		fragmentArray[3] = moreFragment;
+		//显示默认homefragment
+		setFragmentDisplay(0);
+		//初始化购物车数量图标
+		int acount = cart.getList_cartItem().size();
+		if(app.isNew_cart_data()){
+			tv_cart_acount.setText(acount+"");
+			tv_cart_acount.setVisibility(View.VISIBLE);
+		}
+	}
+
+	private void initListeners() {
+		rg_main.setOnCheckedChangeListener(this);
+	}
+
+	@Override
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
+		switch (checkedId) {
+		case R.id.rb_home:
+			setFragmentDisplay(0);
+			break;
+
+		case R.id.rb_account:
+			setFragmentDisplay(1);
+			break;
+
+		case R.id.rb_cart:
+			setFragmentDisplay(2);
+			break;
+
+		case R.id.rb_more:
+			setFragmentDisplay(3);
+//			ibBack.setVisibility(View.INVISIBLE);
+//			civ.setVisibility(View.INVISIBLE);
+//			ibCart.setVisibility(View.INVISIBLE);
+//			rl_title_bar.setVisibility(View.GONE);
+			break;
+		}
+	}
+	/**
+	 * 自定义方法，显示fragment
+	 */
+	private void setFragmentDisplay(int index){
+		FragmentTransaction transaction = fragmentManager.beginTransaction();
+		//隐藏所有fragment
+		if(accountFragment.isAdded()){
+			transaction.hide(accountFragment);
+		}
+		if(cartFragment.isAdded()){
+			transaction.hide(cartFragment);
+		}
+		if(homeFragment.isAdded()){
+			transaction.hide(homeFragment);
+		}
+		if(moreFragment.isAdded()){
+			transaction.hide(moreFragment);
+		}
+		//显示需要的显示fragment
+		if(!fragmentArray[index].isAdded()){
+			transaction.add(R.id.fl_container, fragmentArray[index], fragmentTagArray[index]);
+		}
+		transaction.show(fragmentArray[index]);
+		transaction.commit();
+
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//更新购物车数据图标
+		if(cart.getList_cartItem().size()!=0){
+			app.setNew_cart_data(true);
+			tv_cart_acount.setText(cart.getList_cartItem().size()+"");
+			tv_cart_acount.setVisibility(View.VISIBLE);
+		}else{
+			tv_cart_acount.setVisibility(View.INVISIBLE);
+		}
+		//重新显示页面
+		if(flag_display_argin){
+			if(flag_intent){
+				int tag = getIntent().getIntExtra("TAG", 0);
+				radioButtonArray[tag].setChecked(true);
+				flag_intent = false;
+			}
+		}
+	}
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		setIntent(intent);
+		flag_intent = true;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		flag_display_argin = true;
+	}
+
+	public TextView getTv_cart_acount() {
+		return tv_cart_acount;
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+	}
+}

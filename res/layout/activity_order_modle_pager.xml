@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 第一层容器 -->
+    
+    <LinearLayout
+        android:id="@+id/ll_order_modle_pager_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <!-- 头部标题 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/text_base_font_size_16sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/wathet_blue"
+                android:gravity="center"
+                android:paddingBottom="5sp"
+                android:paddingTop="5sp"
+                android:text="订单模式"
+                android:textColor="@color/white" />
+
+            <!-- 添加按钮 -->
+
+            <TextView
+                android:id="@+id/tv_order_modle_pager_add"
+                android:layout_width="30sp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10sp"
+                android:gravity="center"
+                android:text="添加"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="9"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp" >
+
+        <!-- 无数据状态 -->
+        <com.example.wsd_client.customViews.CustomEnableLinearLayout
+            android:id="@+id/ll_order_modle_pager_unlinked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <!-- 断网图案 -->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="3"
+                    android:src="@drawable/unlinked" />
+
+                <TextView
+                    style="@style/text_base_font_size_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="1"
+                    android:text="亲，你还没有订单模式，请添加"
+                    android:textColor="@color/gray" />
+
+                <!-- 重新加载按钮 -->
+                <TextView
+                    android:id="@+id/tv_order_modle_pager_linked_argin"
+                    style="@style/text_base_font_size_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="@color/red"
+                    android:paddingLeft="5sp"
+                    android:paddingRight="5sp"
+                    android:text="立即添加"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+        </com.example.wsd_client.customViews.CustomEnableLinearLayout>
+            <!-- 订单列表显示 -->
+            <ListView
+                android:id="@+id/lv_order_modle_pager_orders"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/gray_light"
+                android:dividerHeight="1sp"
+                android:scrollbars="@null" >
+            </ListView>
+        </RelativeLayout>
+        <!-- 第一层结束 -->
+    </LinearLayout>
+
+    <!-- 第二层，进行订单模式的修改，增加 -->
+
+    <LinearLayout
+        android:id="@+id/ll_order_modle_pager_seconde"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <!-- 头部标题 -->
+
+        <TextView
+            style="@style/text_base_font_size_16sp"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:background="@color/wathet_blue"
+            android:gravity="center"
+            android:paddingBottom="5sp"
+            android:paddingTop="5sp"
+            android:text="设置订单模式"
+            android:textColor="@color/white" />
+
+        <!-- 垂直滚动 ,购买其他参数 -->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="10"
+            android:background="@color/white"
+            android:padding="5sp"
+            android:scrollbars="@null" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <!-- 订单模式名称 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="订单模式名称" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_dingdan_name"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入订单模式名称"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+
+                <!-- 订单类型 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="订单类型" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_dingdan_type"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入订单类型（默认APP）"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+                <!-- 司机名称 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="司机名称" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_driver_name"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入司机姓名"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+                <!-- 司机驾驶证号 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="司机驾驶证号" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_driver_number"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入司机驾驶证号"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+                <!-- 货车牌号 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="货车牌号" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_cart_number"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入货车牌号"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+                <!-- 司机电话 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="司机电话" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_dirver_phone"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入电话号码"
+                        android:inputType="number"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+                <!-- 下单联系人电话 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="5sp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="left|center_vertical"
+                        android:text="下单联系电话" />
+
+                    <EditText
+                        android:id="@+id/et_order_modle_pager_buy_phone"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/bg_base_editetext_gray_light"
+                        android:gravity="left|center_vertical"
+                        android:hint="请输入下单联系人号码"
+                        android:inputType="number"
+                        android:paddingLeft="5sp" />
+                </LinearLayout>
+
+                <!-- 空余适配 -->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0sp"
+                    android:layout_weight="6" />
+
+                <!-- 购买参数获取结束 -->
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- 确定按钮 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+            </LinearLayout>
+            <!-- 确认按钮 -->
+
+            <Button
+                android:id="@+id/btn_product_details_pager_seconde_confirm"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5sp"
+                android:layout_marginTop="5sp"
+                android:layout_weight="6"
+                android:background="@drawable/btn_selector"
+                android:text="确认"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 第二层结束 -->
+    </LinearLayout>
+
+</RelativeLayout>

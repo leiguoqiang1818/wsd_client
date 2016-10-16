@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    android:background="#ffffff"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/iv_liebiao"
+        android:layout_width="70dp"
+        android:layout_height="300dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_liebiao_code"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="品种代码:"
+            android:textColor="#232323"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_liebiao_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="品种名称:"
+            android:textColor="#232323"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_liebiao_kind"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="袋装/散装"
+            android:textColor="#232323"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_liebiao_price"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="单价：￥ 233元"
+            android:textColor="#ff0000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_liebiao_buy"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:padding="4dp" >
+
+            <RadioButton
+                android:id="@+id/btn_liebiao_buy"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/liebiao_btn_selector"
+                android:focusable="false"
+                android:text="加入购物车"
+                android:textColor="#000000"
+                android:textSize="16sp" 
+                android:button="@null"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                />
+            
+             <RadioButton
+                android:id="@+id/btn_liebiao_buynow"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/liebiao_btn_selector"
+                android:focusable="false"
+                android:text="立即购买"
+                android:textColor="#000000"
+                android:textSize="16sp" 
+                android:button="@null"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

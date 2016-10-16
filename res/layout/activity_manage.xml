@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+   
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_ladeID"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_ladeID"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="订单编号:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_kuaisu_ladeID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_setDate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_title_kuaisu_setDate"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="下单日期:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_setDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:hint="2016-07-15 15:50"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_cementName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_cementName_title"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="水泥品种:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_cementName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:drawableRight="@drawable/down"
+                   android:gravity="center"
+                    android:text="商品名称"
+                    android:textSize="16sp" 
+                    android:background="#ffffff"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_price"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_title_price"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="商品单价:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="¥：260.00元"
+                    android:textColor="#FF0000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_number"
+                android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_number"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="下单数量:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_kuaisu_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@color/white" >
+
+                    <!-- 增加和减少操作 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="20sp"
+                        android:layout_marginRight="20sp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_base_border"
+                        android:orientation="horizontal" >
+
+                        <!-- 递减按钮 -->
+
+                        <ImageView
+                            android:id="@+id/iv_kuaisu_reduce"
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:contentDescription="@null"
+                            android:padding="7sp"
+                            android:src="@drawable/btn_reduce_selector" />
+
+                        <!-- 分割线 -->
+
+                        <View
+                            android:layout_width="1sp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray_light" />
+
+                        <!-- 数量显示文本框 -->
+
+                        <TextView
+                            android:id="@+id/tv_kuaisu_count_display"
+                            style="@style/text_base_font_size_16sp"
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:text="1" />
+
+                        <!-- 分割线 -->
+
+                        <View
+                            android:layout_width="1sp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray_light" />
+
+                        <!-- 递增按钮 -->
+
+                        <ImageView
+                            android:id="@+id/iv_kuaisu_add"
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:padding="7sp"
+                            android:src="@drawable/btn_add_selector" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_totalPrice"
+                android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_title_totalPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="总  金  额:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_totalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="#ff0000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_carName"
+                android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_carName"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="司机姓名:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_kuaisu_carName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_carID"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_carID"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="驾驶证号:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_kuaisu_carID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_carCode"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_carCode"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="运输车牌:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_kuaisu_carCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:hint=""
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_carPhone"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_carPhone"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="司机电话:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_kuaisu_carPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:hint=""
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_kuaisu_orderPhone"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_kuaisu_orderPhone"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="下单人电话:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_kuaisu_orderPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="#ffffff"
+                    android:hint=""
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_kuaisu_btn"
+                android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                android:layout_weight="1">
+
+               
+
+                <LinearLayout
+                    android:id="@+id/ll_kuaisu_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="visible" >
+
+                    <Button
+                        android:id="@+id/btn_kuaisu_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/account_btn_pressed"
+                        android:button="@null"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:text="修改订单"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_kuaisu_delete"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/account_btn_pressed"
+                        android:button="@null"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:text="删除订单"
+                        android:textColor="#000000"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    
+
+</LinearLayout>

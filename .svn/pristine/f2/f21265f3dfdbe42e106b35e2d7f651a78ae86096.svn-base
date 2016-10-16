@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll1_account"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/tv1_account_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="商品名称："
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv1_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:text="此功能正在开发中，尽请期待！"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2_account"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/tv2_account_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="购买时间："
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv2_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:text="此功能正在开发中，尽请期待！"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3_account"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/tv3_account_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="购买数量："
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv3_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:text="此功能正在开发中，尽请期待！"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll4_account"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/tv4_account_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="商品总价："
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv4_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:text="此功能正在开发中，尽请期待！"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="oval">
+    <!-- 背景颜色填充 -->
+    <solid android:color="@color/wathet_blue" />
+    <!-- 圆形大小 -->
+    <size android:width="15sp" android:height="15sp"/>
+    <!-- 背景外层轨迹 -->
+	<stroke android:width="1sp" android:color="@color/white"/>
+</shape>

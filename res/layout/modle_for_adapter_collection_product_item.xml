@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#33eeeeee"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="2sp"
+    android:paddingLeft="5sp"
+    android:paddingRight="5sp"
+    android:paddingTop="2sp" >
+
+    <ImageView
+        android:id="@+id/iv_liebiao"
+        android:layout_width="0sp"
+        android:layout_height="120sp"
+        android:layout_weight="5"
+        android:scaleType="fitCenter"
+        android:src="@drawable/splash" />
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="120sp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="8"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_liebiao_code"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="品种代码:" />
+
+        <TextView
+            android:id="@+id/tv_liebiao_name"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="品种名称:" />
+
+        <TextView
+            android:id="@+id/tv_liebiao_kind"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="袋装/散装" />
+
+        <TextView
+            android:id="@+id/tv_liebiao_price"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="单价：￥ 233元"
+            android:textColor="#ff0000" />
+
+        <LinearLayout
+            android:id="@+id/ll_liebiao_buy"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2sp"
+            android:layout_marginLeft="2sp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_liebiao_buy"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10sp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:minHeight="0sp"
+                android:minWidth="0sp"
+                android:text="添加购物车"
+                android:textColor="@color/button_color_selector"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_liebiao_buynow"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:minHeight="0sp"
+                android:minWidth="0sp"
+                android:text="立即购买"
+                android:textColor="@color/button_color_selector"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
