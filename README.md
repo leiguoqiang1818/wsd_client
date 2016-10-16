@@ -1,0 +1,2 @@
+# wsd_client
+一款类似商城的2b_Android项目，部分功能模块模仿天猫app，服务于企业采购的商城平台，app架构为MVP
